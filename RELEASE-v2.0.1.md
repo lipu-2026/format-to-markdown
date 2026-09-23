@@ -22,5 +22,5 @@ GitHub 自动提供的 Source code 是开发者源码包，普通用户请选择
 SHA-256（Windows ZIP）：
 
 ```text
-a9ade13a632bf0d11e48eb9a219da6805fb57d6c7e1a169f71b0350e70fe16de
+beb23a9e386741cd0ca8b599701534ba2b3849b5b63eeaac99f2997adcc7b768
 ```

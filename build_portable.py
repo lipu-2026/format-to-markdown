@@ -14,11 +14,12 @@ VERSION = '2.0.1'
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--name', default=f'Format-to-Markdown-v{VERSION}-Windows')
+    parser.add_argument('--output-dir', type=Path, default=ROOT / 'release')
     args = parser.parse_args()
     if Path(args.name).name != args.name or any(c in args.name for c in '/\\:'):
         raise SystemExit('Release name must be a folder name, not a path.')
     source_runtime = ROOT / 'release/Format-to-Markdown-Windows/runtime'
-    target = ROOT / 'release' / args.name
+    target = args.output_dir.resolve() / args.name
     archive = target.parent / (target.name + '.zip')
     if target.exists() or archive.exists():
         raise SystemExit(f'Release exists: {target}. Choose a new --name; existing releases are never overwritten.')
